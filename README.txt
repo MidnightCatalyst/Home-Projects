@@ -1,0 +1,1 @@
+These are small projects of mine to get a better footing in the field of computer science and to get a stronger foundation of the potential of web programming using css, html and js alongside problem solving java questions and game creation 
