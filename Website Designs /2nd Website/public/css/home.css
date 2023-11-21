@@ -1,0 +1,62 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/nature.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family:'dosis';
+}
+
+.container
+{
+    position: relative;
+    width: 90%;
+    height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid white;
+}
+
+.logout
+{
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    padding:10px;
+    font-size: 15px;
+    border: 2px solid #da46ae;
+    border-radius: 25px;
+    background: transparent;
+    text-decoration: underline;
+    color: white;
+    cursor: pointer;
+}
+
+.logout:hover
+{
+    background: #da46ae;
+    color: white;
+    transition: 2s ease;
+}
+
+.greeting
+{
+    font-family:'dosis';
+    font-size: 80px;
+    color: white;
+    text-transform: capitalize;
+}

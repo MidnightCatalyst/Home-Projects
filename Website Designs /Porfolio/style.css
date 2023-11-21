@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+
+:root{
+    --yellow: #f2c94c;
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 10; 
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    transition: all 0.3s linear;
+}
+
+*::selection{
+    background: var(--yellow);
+    color: #333;
+}
+
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+} 
+
+html::-webkit-scrollbar {
+    width: 1.3em;
+}
+
+html::-webkit-scrollbar-track {
+    background: #333;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: var(--yellow);
+    border-radius: 25px;
+}
+
+body{
+     background: #111;
+     overflow-x: hidden;
+     padding-left: 36rem;
+}
+
+section
+{
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35rem;
+    height: 100%;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    background: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    text-align: center;
+}
+
+header .user img
+{
+   width: 20em;
+   height: 20em;
+   border-radius: 50%;
+   object-fit: fill;
+   margin-bottom: 0;
+   border: 0.8em solid var(--yellow);
+}
+
+header .user h3{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+header .user p
+{
+    font-size: 3.3rem;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+header .user p span
+{
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: var(--yellow);
+    margin-bottom: 2rem;
+}
+
+header .navbar ul
+{
+    list-style: none;
+    padding: 1rem 3rem;
+}
+
+header .navbar ul li
+{
+    margin-bottom: 1.5rem;
+}
+
+header .navbar ul li a
+{
+    display: block;
+    background: #333;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    margin: 3.5rem;
+}
+
+header .navbar ul li a:hover
+{
+    color: var(--yellow);
+}
+
+header .navbar ul li a i
+{
+    color: var(--yellow);
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+#menu
+{
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    padding: 1rem 1.5rem;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    z-index: 1000;
+    display: none; /* hides the menu when navbar has enough space */
+}
+
+#menu:hover
+{
+    color: var(--yellow);
+}
+
+.home
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    padding : 0 15rem;
+} 
+
+.home h1
+{
+    font-size: 4rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+.home h1 span
+{
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--yellow);
+}
+.home h3
+{
+    font-size: 3rem;
+    font-weight: 600;
+    color: white ;
+}
+
+.home p
+{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #fff;
+    margin: 2rem 0;
+}
+
+.home p span
+{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--yellow);
+    margin: 2rem 0;
+}
+
+.btn
+{
+    background: #333;
+    color: white;
+    cursor: pointer;
+    padding: 1.5rem 3rem;
+    font-size: 2.5rem;
+    border-radius: 25px;
+    margin-top: 5rem;
+    
+}
+
+.btn i
+{
+    color: white;
+    padding: 0 1rem;
+    font-size: 2.5rem;
+}
+
+.btn:hover
+{
+    background: var(--yellow);
+    color: #333;
+}
+.btn i:hover
+{
+    color: #333;
+}
+
+.about .heading
+{
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 5rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 0.7rem solid #fff4;
+    color: white;
+}
+
+.about .heading span
+{
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-right: 0em;
+}
+
+.about .row
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; 
+    padding: 1rem 0;
+}
+
+.about .row .info
+{
+    flex: 0 0 48rem; /* within row, there are two class's, so by choosing display: flex under row allows us to separate them with 0 0 48rem*/
+    padding: 1rem 2rem;
+    padding-left: 6rem;
+}
+
+.about .row .info h3
+{
+    font-size: 2.5rem;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.about .row .info h3 span
+{
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.about .row .counter
+{
+    flex: 1 1 48rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about .row .counter .box
+{
+    width: 20rem;
+    height: 20rem;
+    background: #333;
+    margin: 2rem;
+    padding: 2rem;
+    text-align: center;
+}
+
+.about .row .counter .box span
+{
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-bottom: 1rem;
+}
+
+.about .row .counter .box h3
+{
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.education .heading
+{
+    text-align: center;
+    margin: 0 6rem;
+    font-size: 5rem;
+    font-weight: 600;
+    padding: 1rem;
+    border-bottom: 0.7rem solid #fff4;
+    color: white;
+}
+
+.education .heading span
+{
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--yellow);
+    margin-right: 0em;
+}
+
+.education .box-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    padding-left: 6rem;
+}
+
+.education .box-container .box
+{
+    width: 26rem;
+    margin: 4rem 1rem; /* 4rem is how much space the top and bottom will be between each box, 1rem is how much space left and right each box will be from each other*/
+    padding-left: 4rem;
+    border-left: 0.7rem solid white;
+    position: relative;
+}
+
+.education .box-container .box span
+{
+    font-size: 2.5rem;
+    background: #222;
+    color: white;
+    border-radius: 5rem;
+    padding: 0.5rem 1rem;
+}
+
+.education .box-container .box h3
+{
+    font-size: 2rem;
+    color: #fff;
+    padding-top: 1.5rem;
+}
+
+.education .box-container .box p
+{
+    font-size: 1.4rem;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.education .box-container .box i
+{
+    font-size: 2rem;
+    color: #fff;
+    position: absolute;
+    top: -4.5rem;
+    left: -2.7rem;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    line-height: 5rem;
+    font-size: 2rem;
+    text-align: center;
+    background: var(--yellow);
+    color: white;
+}
+
+.contact .row
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+    
+.contact .row .content
+{
+    flex: 1 1 48rem; /* 1 1 48rem means that the content will take up 1/3 of the screen, and the 48rem is the width of the content. The first one pushes the left side more left and the second pushes right side more right*/
+    padding: 1rem 2rem;
+    padding-left: 6rem;
+}
+
+.contact .row form
+{
+    flex: 1 1 45rem;
+    padding: 2rem;
+    margin: 2rem;
+    margin-bottom: 4rem;
+}
+
+.contact .row form .box
+{
+    padding: 1rem;
+    margin: 1rem 0;
+    background: #3333;
+    color: #fff;
+    text-transform: none;
+    font-size: 2rem;
+    width: 100%;
+}
+
+.contact .row form .box::placeholder
+{
+    text-transform: capitalize;
+}
+
+.contact .row form .message
+{
+    height: 25rem;
+    resize: none;
+}
+
+.contact .row .content .title
+{
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 5rem;
+}
+
+.contact .row .content .info h3
+{
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    padding: 1rem 0;
+}
+
+.contact .row .content .info i
+{
+    font-size: 2.5rem;
+    color: var(--yellow);
+    padding-right: 1.3rem;
+}
+
+.scroll-top
+{
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media quieries */
+
+@media (max-width: 1200px)
+{
+    html
+    {
+        font-size: 55%;
+    }
+
+    .home
+    {
+        padding: 1rem 4rem;
+    
+    }
+}
+
+@media (max-width: 991px) /* dissapears the vertical navbar to be opened by the menu button */
+{
+    header
+    {
+        left: -120%; /* width of the navbar */
+    }
+
+    #menu
+    {
+        display: block;
+    }
+
+    header.toggle /*brings back the header to its original position from -120% when the menu button is clicked*/
+    {
+        left: 0%;
+    }
+
+    body
+    {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) /* dissapears the vertical navbar to be opened by the menu button */
+{
+    html
+    {
+        font-size: 50%; /*fills navbar with the whole screen*/
+    }
+}
+
+@media (max-width: 400px) /* dissapears the vertical navbar to be opened by the menu button */
+{
+    header
+    {
+        width: 100%; /*fills navbar with the whole screen*/
+    }
+
+    .heading
+    {
+        margin: 0 3rem;
+    }
+
+    .about .row .counter .box
+    {
+        width: 100%;
+    }
+
+    .education .box-container .box
+    {
+        width: 100%;
+    }
+
+    .contact .row form
+    {
+        width: 100%;
+    }
+}

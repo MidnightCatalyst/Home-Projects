@@ -1,0 +1,56 @@
+In Terminal given the folder of your choice:
+
+1. $npm init : follow the instructions
+2. Followed by $npm i express.js body-parser knex pg nodemon 
+3. Created a server.js outside of public folder
+4. Go into package.json and change after "main": to "server.js" and change the scripts to this:
+
+"scripts": {
+    "start": "nodemon server.js"
+  },
+
+3. Install PostgreSQL on your system from postgresql.org: During setup password: project and port: 5432
+4. Once the path is added to your system, go into the vsCode terminal and type: psql -U postgres and then type in password 
+5. Create a database: create database anyname;
+6. Go into that database now: \c loginforwebsite2; my user is "postgres"
+7. create tables: create table users (id serial not null primary key, name varchar(255) not null, email varchar(255) not null unique, password varchar(255) not null);
+8. To check your table type: select * from users;
+9. Go into server.js and set it up:
+
+const express = require('express'); //Express js is use to create server
+const path = require('path'); //path allow us to know uor html, css file location
+const bodyParser = require('body-parser'); //body-parser is use to parse the data from the form, allowing us to send and receive data
+const knex = require('knex'); // knex is use to connect with database
+
+const app = express(); //creates a server with express
+
+let initialPath = path.join(__dirname, 'public'); //initial path of our html, css file
+app.use(bodyParser.json()); //use to parse the data from the form
+app.use(express.static(initialPath)); //use to set the initial path where the html files are at, within public folder.
+
+app.get('/', (req, res) => { //get request to the root of the server (home page)
+    res.sendFile(path.join(initialPath, 'index.html')); //send the index.html file
+})
+
+app.get('/login', (req, res) => { //get request to the about page
+    res.sendFile(path.join(initialPath, 'login.html'))
+})
+
+app.get('/register', (req, res) => { //get request to the about page
+    res.sendFile(path.join(initialPath, 'register.html'))
+})
+
+
+app.listen(3000, () => { //listen to port 3000')
+    console.log('Listening on port 3000');
+})
+
+10. Next start a server by typing npm start in the terminal of the folder
+11. When it is runnning, you can locally access the website: http://localhost:3000/login
+12. Go to register.html and scroll down to this line:     <p>Don't have an account? <a href = "#" class = "login-link">Register</a></p> and substitute the # for /login which the server.js will direct it to the login.html page and change in login.html, # to /register
+13. Now go to form.js and fill it in as I have in mine
+
+
+
+
+http://127.0.0.1:5500/public/register.html

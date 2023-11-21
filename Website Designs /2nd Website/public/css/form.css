@@ -1,0 +1,155 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus
+{
+    outline: none;
+}
+body
+{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(../images/nature.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family:'dosis';
+}
+
+.form
+{
+    text-transform: capitalize;
+    text-align: center;
+    width: 400px;
+    height: 500px;
+    color: black;
+    border: 2px solid lightblue;
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 25px;
+}
+
+.form .heading
+{
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-decoration: underline;
+}
+
+input
+{
+    width: 80%;
+    height: 25px;
+    margin: 10px 0px;
+    padding: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: .5s;
+    text-transform: capitalize;
+}
+
+input::placeholder
+{
+    color: white;
+}
+
+input:focus
+{
+    background: white;
+    color: black;
+}
+
+input:focus::placeholder
+{
+    color: black
+}
+
+.submit-btn
+{
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.3);
+    transition: .5s;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+
+.register
+{
+    font-size: 15px;
+    color: black;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.register-link
+{
+    font-size: 15px;
+    color: purple;
+    text-decoration: none;
+}
+
+.register-link:hover
+{   
+    text-decoration: underline;
+    transition: 1s ease; 
+}
+
+.login
+{
+    font-size: 15px;
+    color: black;
+    margin-top: 20px;
+    text-transform: capitalize;
+}
+
+.login-link
+{
+    font-size: 15px;
+    color: blue;
+    text-decoration: none;
+}
+
+.login-link:hover
+{   
+    text-decoration: underline;
+    transition: 1s ease;
+}
+
+.alert-box
+{
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background: lightcoral;
+    min-width: 150px;
+    max-width: 400px;
+    width: auto;
+    height: auto;
+    text-transform: capitalize;
+    border-top: 10px solid red;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    transition: 1s ease;
+}

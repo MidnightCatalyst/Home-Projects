@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+
+:root
+{
+    --main-color: beige;
+    --black: black;
+    --bg: black;
+    --border: .1rem solid beige;
+
+}
+
+*{
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.25s linear;
+}
+
+html{
+    font-size: 55.5%;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    scroll-padding-top: 5rem;
+} 
+
+html::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+html::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: coral;
+    border-radius: 25px;
+}
+
+
+
+body {
+    background: black;
+}
+
+section
+{
+    padding: 5rem 7%;
+
+} 
+
+.heading
+{
+    font-size: 2.5em;
+    font-weight: 500;
+    color: beige;
+    text-align: center;
+    padding-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.heading span 
+{
+    text-transform: uppercase;
+    color: coral;
+}
+
+.btn
+{
+    display: inline-block;
+    padding: 0.5em 2em;
+    background: coral;
+    color: white;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 15px;
+    cursor: pointer;
+    
+}
+
+.btn:hover
+{
+    background: beige;
+    color: black;
+    letter-spacing: 1px;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-size: 2em;
+    padding: 1em;
+    border-bottom: ver(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+
+}
+.btn:hover
+{
+    letter-spacing: 1px;
+}
+body .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'roboto', sans-serif;
+    font-size: 2em;
+    padding: 1em;
+    border-bottom: ver(--border);
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    border-bottom: 2px solid lightgray;
+}
+
+.header .logo img
+{
+    width: 75px;
+    height: 75px;
+    margin: 0 1em;
+}
+
+.header .navbar a
+{
+    margin: 0 1em;
+    font-size: 1.1em;
+    color: beige;
+    text-decoration: none;
+}
+
+.header .navbar a:hover
+{
+    color: coral;
+    transform: underline;
+    letter-spacing: 1px;
+    border-bottom: .1em solid beige; /*for thickeness of underline*/
+    padding-bottom: .15em; /*how below under the navbar the underline will be*/
+}
+
+.header .icons div
+{
+    color: beige;
+    cursor: pointer;
+    font-size: 1em;
+    justify-content: space-between;
+}
+
+.header .icons div:hover
+{
+    color: coral;
+    border-radius: 25px;
+}
+
+#menu-btn
+   {
+    display: none;
+   }
+
+.header .icons div:nth-child(1)
+{
+    margin-right: 1em;
+}
+.header .icons div:nth-child(2)
+{
+    margin-right: 1em;
+}
+.header .icons div:nth-child(3)
+{
+    margin-right: 1em;
+}
+
+
+.header .search-form
+{
+    position: absolute;
+    top: 115%; right: 7%;
+    background: white;
+    width: 20em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    transform: scaleY(1);
+    border: 5px solid black;
+    border-radius: 25px;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: top;
+}
+
+.header .search-form.active
+{
+    transform: scaleY(1);
+}
+
+
+.header .search-form input
+{
+    height: 100%;
+    width: 100%;
+    font-size: 1em;
+    font-weight: 450;
+    font-family: 'roboto', sans-serif;
+    color: black;
+    padding: 0.5rem;
+    text-transform: none;
+    transform: capitalize;
+}
+
+.header .search-form input::placeholder
+{
+    color: black;
+    font-size: 1em;
+}
+
+.header .search-form label
+{
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 1.5rem;
+    color: black
+}
+
+.header .search-form label:hover
+{
+    color: coral;
+}
+
+.header .cart-items-container
+{
+    position: absolute;
+    top: 100%; right: -100%;
+    height: calc(100vh - 0.1em);
+    width:13em;
+    background: white;
+    padding: 0 1em;
+}
+
+.header .cart-items-container.active
+{
+    right: 0;
+}
+.header .cart-items-container .cart-item
+{
+    position: relative;
+    border-bottom: 2px solid lightgray;
+    margin: 1em 0;
+    align-items: center;
+    gap: .1em;
+}
+
+.header .cart-items-container .fa-times
+{
+    position: relative;
+    top: 0; left: 0;
+    font-size: .8em;
+    color: black;
+    cursor: pointer;
+}
+
+.header .cart-items-container .fa-times:hover
+{
+    color: coral;
+    letter-spacing: 10px;
+}
+
+.header .cart-items-container .cart-item .content h3
+{
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    color: black;
+    padding-bottom: 15px;
+}
+
+.header .cart-items-container .cart-item .content .price
+{
+    font-size: 1em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 500;
+    color: black;
+}
+
+.header .cart-items-container .btn
+{
+    width: 100%;
+    text-align: center;
+}
+
+.home
+{
+    min-height: 100vh;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('../images/beans.jpeg');
+    background-size: cover;
+    background-position: center;
+    
+}
+
+.home .content
+{
+    max-width: 30;  
+    
+}
+
+.home .content h3 
+{
+    font-size: 6rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    padding-bottom: 25px;
+
+}
+
+.home .content p
+{
+    font-size: 2.4em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 400;
+    max-width: 30;
+    color: #eee;
+    padding-bottom: 50px;
+    text-transform: uppercase;
+    line-height: 1.5;
+}
+
+.home .content a
+{
+    padding: 25px 50px;
+    background: lightsalmon;
+  
+}
+
+.home .content .btn
+{
+    font-size: 2em;
+    letter-spacing: 5px;
+    font-weight: 700;
+
+}
+
+.home .content .btn:hover
+{
+    letter-spacing: px;   
+
+}
+
+.about .row
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1;
+    background: rgb(40, 40, 73);
+    border-radius: 25px;
+    flex: wrap;
+}
+.about .row .image
+{
+    flex: 1 1 75rem;
+}
+
+.about .row .image img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about .row .content
+{
+    flex: 1 1 45rem;
+    padding: 0 2rem;
+    
+    height: 100%;
+    width: 100%;
+
+}
+
+.about .row .content h3
+{
+    font-size: 3rem;
+    font-weight: 500;
+    color: beige;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+.about .row .content p
+{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #eee;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.about .content a
+{
+    padding: 20px 50px;
+    background: lightsalmon;
+    font-size: 1.5em;
+}
+
+.menu .box-container
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5em 0;
+}
+
+.menu .box-container .box
+{
+    padding: 2.5em;
+    margin-bottom: 5em;
+    text-align: center;
+    border: 2px solid beige;
+    border-radius: 25px;
+
+}
+
+.menu .box-container .box:hover
+{
+    
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+    background: white;
+    color: black;
+}
+
+.menu .box-container .box:hover h3
+{
+    color: black;
+}
+
+.menu .box-container .box h3
+{
+    font-size: 2.5em;
+    font-weight: 500;
+    color: beige;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.menu .box-container .box .price
+{
+    font-size: 2em;
+    font-weight: 400;
+    color: red;
+    padding-bottom: 3em 0;
+    line-height: 1.5;
+    
+
+}
+.menu .box-container .box .price span
+{
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #eee;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+    text-decoration: line-through;
+}
+
+.products .box-container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2em;
+
+}
+
+.products .box-container .box
+{
+    text-align: center;
+    border: 2px solid beige;
+    border-radius: 10px;
+    padding: 3.2em;
+}
+
+.products .box-container .box .icons a
+{
+    font-size: 2em;
+    height: 2.5em;
+    width: 2.5em;
+    line-height: 1.2em;
+    color: white;
+    margin-bottom: 1.2em;
+    margin: 0 .16em;
+    border: 2px solid beige;
+    padding: 0.5em;
+    
+}
+
+.products .box-container .box .icons a:hover
+{
+    background: beige;
+    color: black;
+    border-radius: 25px;
+}
+
+.products .box-container .box .image
+{
+    padding: 1.3em 0;
+    padding-top: 3.7em;
+}
+
+.products .box-container .box .content h3
+{
+    color: white;
+    font-size: 2.5em;
+    padding-bottom: 1em;
+}
+
+.products .box-container .box .content .stars
+{
+    color: yellow;
+    font-size: 2.3em;
+}
+
+.products .box-container .box .content .price
+{
+    color: red;
+    font-size: 2.1em;
+}
+
+.products .box-container .box .content .price span
+{
+    color: #eee;
+    text-decoration: line-through;
+    font-size: 0.73em;
+}
+
+.review .box-container
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 2em;
+}
+
+.review .box-container .box
+{
+    text-align: center;
+    border: 2px solid beige;
+    border-radius: 10px;
+    padding: 3.2em;
+}
+
+.review .box-container .box .user
+{
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.review .box-container .box p
+{
+    font-size: 1.8em;
+    font-weight: 400;
+    color: #eee;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.review .box-container .box h3
+{
+    font-size: 2.3em;
+    font-weight: 600;
+    color: beige;
+    padding-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.review .box-container .stars i
+{
+    color: yellow;
+    font-size: 2.3em;
+}
+
+.contact .row
+{
+    display: flex;
+    align-items: center;
+    background: rgb(22, 22, 60);
+    flex: wrap;
+    gap: 2em;
+}
+
+.contact .row .map
+{
+    flex: 0 0 85rem;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.contact .row form
+{
+    flex: 1 1 50rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.contact .row form h3
+{
+    font-size: 5em;
+    color: white;
+    text-transform: uppercase;
+
+}
+
+.contact .row form .inputBox
+{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: 2px solid beige;
+}
+
+.contact .row form .inputBox input
+{
+    width: 100%;
+    padding: 1em; 
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #fff;
+    border-radius: 5px;
+    background : black;
+    text-transform: none;;
+
+}
+.contact .row form .inputBox span
+{
+    font-size: 2em;
+    padding-left: .5em;
+    color: white;   
+    background: black; 
+
+}
+
+.contact .row form .inputBox input::placeholder
+{
+    color: white;
+    font-size: 1em;
+}
+
+.contact .row form .btn
+{
+   color: white;
+    font-size: 1.5em;
+    font-weight: 500;
+    margin-top: 2rem;
+
+}
+
+.contact .row form .btn:hover
+{
+    color: black;
+    letter-spacing: 1px;
+}
+
+.footer 
+{
+    text-align: center;
+}
+
+.footer .share
+{
+    display: flex;
+    justify-content: center;  
+    gap: 5em;
+    
+}
+
+.footer .share a
+{
+    height: 2em;
+    width: 2em;
+    font-size: 3.5em;
+    color: white;
+    cursor: pointer;
+    line-height: 2em;
+    border: 2px solid beige;
+    border-radius: 50%;
+    margin: .3em;
+}
+
+.footer .share a:hover
+{
+    background: beige;
+    color: lightblue;
+}
+
+.footer .credit
+{
+    
+    color: white;
+    font-size: 2em;
+    font-weight: lighter;
+    padding: 3.5rem;
+}
+
+.footer .credit span
+{
+    color: coral;
+    font-size: 2em;
+}
+
+
+
+
+
+
+
+/* Media Queries */
+
+@media (max-width: 991px)
+{
+    html{
+        font-size: 45%;
+    }
+
+    .header{
+        padding: 1.5em 2em;
+    }
+    section
+    {
+    padding: 5rem 0;
+
+    } 
+}
+
+@media (max-width: 823px)
+{
+   #menu-btn
+   {
+    display: inline-block;
+   }
+
+   .header .navbar
+   {
+    position: absolute;
+    top: 100%; right: -100%;
+    background:whitesmoke;
+    height : calc(100vh - 1em);
+    width:12em;
+    
+   }
+
+   .header .navbar.active
+   {
+        right: 0;
+   }
+
+   .header .navbar a
+   {
+    color: black;
+    display: block;
+    padding: 1em 2em;
+    margin: 1.5rem;
+    font-size: 2rem;
+   }
+
+   .header .search-form
+   {
+        width: 100%;
+        height: 3.2em;
+        right: 0em;
+   }
+
+   .header .cart-items-container .fa-times
+   {
+    position: relative;
+    top: 0; left: 0;
+   }
+
+   .home
+   {
+    background-position: left;
+    justify-content: center;
+   }
+   .home .content h3 
+   {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: whitesmoke;
+    padding-bottom: 25px;
+   }
+
+   @media (max-width: 450px)
+   {
+       html{
+           font-size: 40%;
+       }
+   }
+}
